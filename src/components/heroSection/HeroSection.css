@@ -1,0 +1,138 @@
+/* Base styles */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Responsive image handling */
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Animation keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Rotating text styles */
+.animate-spin-slow {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+text {
+  dominant-baseline: middle;
+  text-anchor: start;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  word-spacing: 2px;
+}
+
+textPath {
+  text-rendering: optimizeLegibility;
+  shape-rendering: geometricPrecision;
+}
+
+/* Ensure SVG text is visible on mobile */
+@media (max-width: 640px) {
+  .animate-spin-slow svg {
+    transform: scale(1.15);
+  }
+  text {
+    letter-spacing: 0.25px;
+    word-spacing: 1px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+  .animate-spin-slow svg {
+    transform: scale(1.2);
+  }
+  text {
+    letter-spacing: 0.15px;
+    word-spacing: 0.5px;
+  }
+}
+
+/* Gradient overlay for dark mode */
+@media (prefers-color-scheme: dark) {
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00c867;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #009e52;
+}
+
+/* Scrolling text animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scrolling-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scrolling-text {
+  display: inline-block;
+  animation: scroll 40s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.scrolling-text:hover {
+  animation-play-state: paused;
+}

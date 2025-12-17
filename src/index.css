@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom utilities for mobile optimization */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .touch-manipulation {
+    touch-action: manipulation;
+  }
+  
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Mobile bottom navigation padding */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 65px;
+  }
+  
+  /* Ensure mobile bottom nav is always clickable */
+  .mobile-bottom-nav {
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+  
+  .mobile-bottom-nav * {
+    pointer-events: auto;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+  }
+  
+  body {
+    @apply font-sans antialiased font-normal;
+  }
+
+  /* Reset all text elements to regular weight */
+  h1, h2, h3, h4, h5, h6, p, span, div, button, input, textarea, select {
+    @apply font-normal;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
