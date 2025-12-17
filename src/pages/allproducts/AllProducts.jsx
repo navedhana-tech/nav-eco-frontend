@@ -13,6 +13,7 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
 import { useNavigate } from '@tanstack/react-router';
 import { useUserTracking } from '../../hooks/useUserTracking';
+import { Helmet } from 'react-helmet-async';
 
 function Allproducts() {
     const { trackPage } = useUserTracking();
@@ -378,6 +379,20 @@ function Allproducts() {
 
     return (
         <Layout>
+            <Helmet>
+                <title>All Products – Fresh Vegetables & Leafy Greens Delivery | Navedhana Fresh</title>
+                <meta
+                    name="description"
+                    content="Browse and search fresh vegetables and leafy greens on Navedhana Fresh. Order online for fast doorstep home delivery."
+                />
+                <link rel="canonical" href="https://fresh.navedhana.com/allproducts" />
+                <meta property="og:url" content="https://fresh.navedhana.com/allproducts" />
+                <meta property="og:title" content="All Products – Fresh Vegetables & Leafy Greens Delivery | Navedhana Fresh" />
+                <meta
+                    property="og:description"
+                    content="Browse and search fresh vegetables and leafy greens on Navedhana Fresh. Order online for fast doorstep home delivery."
+                />
+            </Helmet>
             {/* Hero Section */}
             <div className="bg-gradient-to-r from-green-50 via-pink-50 to-blue-50 py-8 mb-8 mt-20">
                 <div className="container mx-auto px-4">

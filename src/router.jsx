@@ -163,17 +163,6 @@ const allProductsRoute = createRoute({
 const cartRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/cart',
-  beforeLoad: ({ location }) => {
-    const isAuthenticated = checkUserAuth();
-    if (!isAuthenticated) {
-      throw redirect({
-        to: '/',
-        search: {
-          redirect: location.pathname,
-        },
-      });
-    }
-  },
   component: Cart
 });
 

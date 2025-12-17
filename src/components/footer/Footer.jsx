@@ -125,6 +125,9 @@ export default function Footer() {
                         <p className="text-sm">
                             © 2024 Navedhana. All rights reserved.
                         </p>
+                        <p className="text-sm">
+                            Powered by <span className={mode === 'dark' ? 'text-white font-medium' : 'text-gray-900 font-medium'}>Navedhana Profit Amplifier Private Limited</span>
+                        </p>
                         <div className="flex items-center gap-2">
                             <Leaf className="w-4 h-4 text-green-600" />
                             <span className="text-sm">Supporting Local Farmers</span>

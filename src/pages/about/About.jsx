@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import myContext from '../../context/data/myContext';
 import { useUserTracking } from '../../hooks/useUserTracking';
+import { Helmet } from 'react-helmet-async';
 
 const AboutPage = () => {
     const { trackPage } = useUserTracking();
@@ -32,6 +33,20 @@ const AboutPage = () => {
 
     return (
        <Layout>
+            <Helmet>
+                <title>About – Farm-to-Table Fresh Vegetable Delivery | Navedhana Fresh</title>
+                <meta
+                    name="description"
+                    content="Learn about Navedhana Fresh and our mission to connect farmers directly with customers for fresh vegetables and leafy greens home delivery."
+                />
+                <link rel="canonical" href="https://fresh.navedhana.com/about" />
+                <meta property="og:url" content="https://fresh.navedhana.com/about" />
+                <meta property="og:title" content="About – Farm-to-Table Fresh Vegetable Delivery | Navedhana Fresh" />
+                <meta
+                    property="og:description"
+                    content="Learn about Navedhana Fresh and our mission to connect farmers directly with customers for fresh vegetables and leafy greens home delivery."
+                />
+            </Helmet>
             {/* Hero Section */}
             <div className="pt-24 lg:pt-28 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

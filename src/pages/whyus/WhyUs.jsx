@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import myContext from '../../context/data/myContext';
 import { useUserTracking } from '../../hooks/useUserTracking';
+import { Helmet } from 'react-helmet-async';
 
 const WhyUsPage = () => {
     const { trackPage } = useUserTracking();
@@ -30,6 +31,20 @@ const WhyUsPage = () => {
 
     return (
         <Layout>
+            <Helmet>
+                <title>Why Us – Fresh Vegetable Delivery, Local Farmers | Navedhana Fresh</title>
+                <meta
+                    name="description"
+                    content="Why choose Navedhana Fresh? Farm-to-table vegetables and leafy greens with fast home delivery, fair farmer pricing, and quality assurance."
+                />
+                <link rel="canonical" href="https://fresh.navedhana.com/whyus" />
+                <meta property="og:url" content="https://fresh.navedhana.com/whyus" />
+                <meta property="og:title" content="Why Us – Fresh Vegetable Delivery, Local Farmers | Navedhana Fresh" />
+                <meta
+                    property="og:description"
+                    content="Why choose Navedhana Fresh? Farm-to-table vegetables and leafy greens with fast home delivery, fair farmer pricing, and quality assurance."
+                />
+            </Helmet>
             {/* Hero Section */}
             <div className="pt-24 lg:pt-28 min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

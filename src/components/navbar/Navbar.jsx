@@ -59,6 +59,22 @@ export default function Navbar() {
     setShowAuthModal(true);
   };
 
+  // If a protected route redirected a guest to "/" with ?redirect=..., open login modal
+  useEffect(() => {
+    if (user) return;
+    if (showAuthModal) return;
+
+    // TanStack Router may provide search as an object; be defensive.
+    const search = location?.search;
+    const redirectTarget =
+      (search && typeof search === 'object' && search.redirect) ||
+      (typeof search === 'string' ? new URLSearchParams(search).get('redirect') : null);
+
+    if (redirectTarget) {
+      openAuthModal('login');
+    }
+  }, [location?.search, user, showAuthModal]);
+
   const navIcons = {
     'Home': Home,
     'All Products': ShoppingBag,

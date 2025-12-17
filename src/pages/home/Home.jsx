@@ -9,6 +9,7 @@ import { getDoc, doc } from 'firebase/firestore';
 import { fireDB } from '../../firebase/FirebaseConfig';
 import { useUserTracking } from '../../hooks/useUserTracking';
 import { useNavigate } from '@tanstack/react-router';
+import { Helmet } from 'react-helmet-async';
 //import Testimonial from '../../components/testimonial/Testimonial';
 
 function Home() {
@@ -62,6 +63,20 @@ function Home() {
 
   return (
     <Layout>
+      <Helmet>
+        <title>Navedhana Fresh – Fresh Vegetables & Leafy Greens Home Delivery</title>
+        <meta
+          name="description"
+          content="Order fresh vegetables and leafy greens online with Navedhana Fresh. Farm-to-table produce with fast doorstep home delivery and easy search."
+        />
+        <link rel="canonical" href="https://fresh.navedhana.com/" />
+        <meta property="og:url" content="https://fresh.navedhana.com/" />
+        <meta property="og:title" content="Navedhana Fresh – Fresh Vegetables & Leafy Greens Home Delivery" />
+        <meta
+          property="og:description"
+          content="Order fresh vegetables and leafy greens online with Navedhana Fresh. Farm-to-table produce with fast doorstep home delivery and easy search."
+        />
+      </Helmet>
               <div className="pt-[70px] lg:pt-35">
         {/* Debug Navigation Panel */}
         

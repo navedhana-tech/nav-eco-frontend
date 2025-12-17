@@ -62,7 +62,7 @@ function HeroSection() {
           Freshness Delivered, <span className="text-pink-600 block sm:inline">Every Day</span>
               </h1>
         <p className="text-sm sm:text-lg md:text-xl text-gray-700 mb-4 sm:mb-8 font-medium px-2 sm:px-0 leading-relaxed">
-          Empowering farmers. Enjoy the best quality vegetables and leafy greens, delivered to your doorstep.
+          Empowering farmers. Search and order farm-fresh vegetables and leafy greens online, delivered to your doorstep with fast home delivery.
         </p>
         <div className="mb-6 max-w-md mx-auto relative px-2 sm:px-0" ref={searchRef}>
           <div className="relative rounded-full bg-white shadow-lg border border-gray-200 flex items-center">
